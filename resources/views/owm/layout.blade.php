@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Dashboard - NiceAdmin Bootstrap Template</title>
     <meta content="" name="description">
@@ -38,12 +39,13 @@
     <!-- Include SweetAlert2 JS -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+<link rel="stylesheet" href="{{asset('assets/css/bot.css')}}">
 
-    
 </head>
 
 
 <body>
+
 
     @include('owm.partials.header')
     @include('owm.partials.aside')
@@ -61,6 +63,9 @@
         </section>
 
     </main><!-- End #main -->
+
+    @include('owm.partials.bot');
+
 
     <!-- ======= Footer ======= -->
     <footer id="footer" class="footer">
@@ -129,7 +134,8 @@
             });
         @endif
     </script>
-
+    <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
+    <script src="{{ asset('assets/js/bot.js') }}"></script>
 </body>
 
 </html>

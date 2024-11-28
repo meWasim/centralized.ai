@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HrController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\GitHubController;
+use App\Http\Controllers\ChatbotController;
+
+use App\Http\Controllers\BotManController;
 Route::get('/', function () {
     return view('welcome');
 });
@@ -25,3 +28,8 @@ Route::prefix('github')->group(function () {
     Route::post('disconnect', [GitHubController::class, 'disconnect'])->name('github.disconnect');
 });
 
+
+
+
+Route::get('/chat', [ChatbotController::class, 'index']);
+Route::post('/chat', [ChatbotController::class, 'chat']);
