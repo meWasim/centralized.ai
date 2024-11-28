@@ -1,6 +1,8 @@
 <?php
 
 namespace Database\Seeders;
+
+use App\Models\ChatbotAnswer;
 use App\Models\Company;
 use App\Models\User;
 use App\Models\Hr;
@@ -25,5 +27,8 @@ class DatabaseSeeder extends Seeder
         Company::factory(10)
             ->hasHr(5) // Assuming the relationship is defined
             ->create();
+
+
+            ChatbotAnswer::factory(10)->create();
     }
 }
